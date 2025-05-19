@@ -6,8 +6,6 @@ public class SimpleSkeletonController : MonoBehaviour
 {
     Animator animator;
     SkinnedMeshRenderer skinnedMesh;
-    float TimeElapsed = 0;
-    bool Left = false;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,7 +14,6 @@ public class SimpleSkeletonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.L))
             animator.SetTrigger("lying");
         else if (Input.GetKeyDown(KeyCode.Space))
