@@ -1,18 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\William Guay\\Unity\\Diablo TP\\",
+  "WorkspaceRootPath": "C:\\Users\\willb\\Downloads\\Unity\\TP3-Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|d:\\william guay\\unity\\diablo tp\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Downloads\\Unity\\TP3-Unity\\assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|d:\\william guay\\unity\\diablo tp\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|D:\\William Guay\\Unity\\Diablo TP\\assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\CameraFollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,41 +20,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\CameraFollow.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
               "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\CameraFollow.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T18:53:19.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T18:53:19.519Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\PlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T18:42:56.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T18:42:56.254Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SimpleSkeletonController.cs",
-              "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
+              "DocumentMoniker": "C:\\Users\\willb\\Downloads\\Unity\\TP3-Unity\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
-              "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
+              "ToolTip": "C:\\Users\\willb\\Downloads\\Unity\\TP3-Unity\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "RelativeToolTip": "Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAowCIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

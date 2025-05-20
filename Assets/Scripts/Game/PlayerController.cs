@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_PunchDistance;
     [SerializeField] private AudioHandler m_AudioHandler;
     [SerializeField] private float m_RunSoundsDelay;
+    [SerializeField] private GameHUD m_GameHUD;
+    [SerializeField] private int m_PlayerHealth;
+    private Color m_HighlightColor = Color.white;
+    private float m_OutlineWidth = 5f;
+    private Outline m_CurrentOutline;
+    private int m_MaxPlayerHealth;
     private TimersHandler m_ShootTimer;
     private TimersHandler m_PunchTimer;
     private TimersHandler m_RunSoundsTimer;
@@ -31,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        m_MaxPlayerHealth = m_PlayerHealth;
+
         m_Agent = GetComponent<NavMeshAgent>();
         m_Animator = GetComponent<Animator>();
 
@@ -64,11 +73,17 @@ public class PlayerController : MonoBehaviour
                     //Donc ca va set une nouvelle cible que le joueur va track.
                     m_CurrentEnemyTarget = info.collider.gameObject;
                     m_Agent.stoppingDistance = m_ShootDistance;
-                } else
+                    HighlightObject(info.collider.gameObject);
+                }
+                else if (info.collider.gameObject.tag == "Interactable") {
+                
+                }
+                else
                 {
                     //Si il touche pas un ennemi, il n'aura pas/plus de cible a track et il va se deplacer au point exact.
                     m_CurrentEnemyTarget = null;
                     m_Agent.stoppingDistance = 0;
+                    RemoveHighlight();
                 }
 
                 //Gérer le déplacement
@@ -102,8 +117,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int Dmg)
+    {
+        m_PlayerHealth -= Dmg;
+        if (m_PlayerHealth < 0) { m_PlayerHealth = 0; }
+        m_GameHUD.NotifyPlayerHealth(m_PlayerHealth);
+    }
+
     void HandleAttackTimers()
     {
+        //Je me sert de mon component TimersHandler pour gérer les timers
         if (!m_CanShoot)
         {
             if (m_ShootTimer.UpdateTimer())
@@ -149,7 +172,12 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         if (m_CurrentEnemyTarget == null) return; // Pour être 100% sur qu'il existe
-        Vector3 ShootDirection = (m_CurrentEnemyTarget.transform.position - m_Gun.transform.position).normalized;
+
+        //J'ai fai ceci car sinon il visait sur les pieds du monstre. Je veut qu'il vise sur ses hips.
+        Transform CharacterReference = m_CurrentEnemyTarget.transform.Find("Character1_Reference");
+        Transform ProjectileTarget = CharacterReference.transform.Find("Character1_Hips");
+
+        Vector3 ShootDirection = (ProjectileTarget.transform.position - m_Gun.transform.position).normalized;
 
         GameObject Projectile = Instantiate(m_ProjectilePrefab, m_Gun.transform.position, Quaternion.identity);
 
@@ -172,7 +200,6 @@ public class PlayerController : MonoBehaviour
 
         //Ca fait une variable AngleDifference qui va dire les 2 angles sont proches comment
         float CurrentY = transform.eulerAngles.y;
-        float NewY = TargetRotation.eulerAngles.y;
         float AngleDifference = Mathf.Abs(Mathf.DeltaAngle(CurrentY, TargetY));
 
         //C'est pour pas que le lerp continue a l'infini (si les 2 angles sont assez proches, le lerp s'arrete).
@@ -183,6 +210,35 @@ public class PlayerController : MonoBehaviour
         else
         {
             transform.rotation = TargetRotation;
+        }
+    }
+
+    private void HighlightObject(GameObject obj)
+    {
+        RemoveHighlight();
+
+        //Creer un component outline sur l'objet si il en a pas deja un.
+        Outline outline = obj.GetComponent<Outline>();
+        if (outline == null)
+        {
+            outline = obj.AddComponent<Outline>();
+            outline.OutlineColor = m_HighlightColor;
+            outline.OutlineWidth = m_OutlineWidth;
+            outline.OutlineMode = Outline.Mode.OutlineVisible;
+        }
+
+        outline.enabled = true;
+
+        //Garder l'outline en information pour le RemoveHighlight()
+        m_CurrentOutline = outline;
+    }
+
+    private void RemoveHighlight()
+    {
+        if (m_CurrentOutline != null)
+        {
+            m_CurrentOutline.enabled = false;
+            m_CurrentOutline = null;
         }
     }
 

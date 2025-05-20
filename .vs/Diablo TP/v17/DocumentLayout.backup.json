@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\William Guay\\Unity\\Diablo TP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|d:\\william guay\\unity\\diablo tp\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|d:\\william guay\\unity\\diablo tp\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|d:\\william guay\\unity\\diablo tp\\assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|D:\\William Guay\\Unity\\Diablo TP\\assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D6DC71F-E8C1-0000-6D6C-E25A29246FC8}|Assembly-CSharp.csproj|solutionrelative:assets\\assets\\simpleskeleton\\script\\simpleskeletoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,25 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CameraFollow.cs",
+              "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\CameraFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
+              "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\CameraFollow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T18:53:19.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T18:42:56.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SimpleSkeletonController.cs",
               "DocumentMoniker": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "RelativeDocumentMoniker": "Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "ToolTip": "D:\\William Guay\\Unity\\Diablo TP\\Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
               "RelativeToolTip": "Assets\\Assets\\SimpleSkeleton\\script\\SimpleSkeletonController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBQAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T18:07:17.728Z",
               "EditorCaption": ""

@@ -8,6 +8,8 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] private AudioClip[] m_PunchSounds;
     [SerializeField] private AudioClip[] m_RunSounds;
     [SerializeField] private AudioClip m_ShootSound;
+    
+    //Puisque je planifie d'utiliser plusieurs audios, je me suis fait un script pour que ca soit plus facile a gérer.
     void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();

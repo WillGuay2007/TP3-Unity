@@ -13,6 +13,7 @@ public class ProjectileHandler : MonoBehaviour
 
     void Update()
     {
+        //Si le projectile est initialisé, update la position
         if (!m_IsInitialised) return;
         transform.position += m_Direction * m_Speed * Time.deltaTime;
         if (Vector3.Distance(transform.position, m_CurrentEnemyTarget.transform.position) > m_DestroyDistance) Destroy(gameObject);
@@ -31,6 +32,10 @@ public class ProjectileHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+        //Sinon, la balle passe a travers.
     }
 }

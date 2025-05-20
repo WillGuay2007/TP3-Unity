@@ -1,0 +1,116 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class EnemyHandler : MonoBehaviour
+{
+    [SerializeField] private GameObject m_Player;
+    [SerializeField] private float m_AttackDistance;
+    [SerializeField] private int m_AttackDamage;
+    [SerializeField] private float m_AttackDelay;
+    [SerializeField] private float m_SpotDistance;
+    private bool m_CanAttack = true;
+    private float m_FacePlayerSpeed = 5;
+    private PlayerController m_PlayerController;
+    private Animator m_Animator;
+    private NavMeshAgent m_Agent;
+    private TimersHandler m_AttackTimer;
+    private bool m_IsAttacking;
+    private bool m_SpottedPlayer;
+    // Start is called before the first frame update
+    void Start()
+    {
+        m_PlayerController = m_Player.GetComponent<PlayerController>();
+        m_Agent = GetComponent<NavMeshAgent>();
+        m_Animator = GetComponent<Animator>();
+        m_AttackTimer = gameObject.AddComponent<TimersHandler>();
+        m_AttackTimer.m_Duration = m_AttackDelay;
+        m_Agent.updateRotation = false; // Je gère déja la rotation.
+        m_Agent.stoppingDistance = m_AttackDistance;
+    }
+
+    void Update()
+    {
+        //Gérer la logique du spot et follow
+        FollowPlayer();
+
+        if (!m_SpottedPlayer) return;
+        HandleAttackTimer();
+        FacePlayer();
+        if (Vector3.Distance(transform.position, m_Player.transform.position) < m_AttackDistance)
+        {
+            if (m_CanAttack)
+            {
+                m_CanAttack = false;
+                AttackPlayer();
+            }
+        }
+    }
+
+    void AttackPlayer()
+    {
+        m_PlayerController.TakeDamage(m_AttackDamage);
+        m_Animator.SetTrigger("Attack");
+    }
+
+    void HandleAttackTimer()
+    {
+        if (m_CanAttack) return;
+        if (!m_AttackTimer.IsActive()) m_AttackTimer.StartTimer();
+        if (m_AttackTimer.UpdateTimer())
+        {
+            m_CanAttack = true;
+        }
+    }
+
+    void FacePlayer()
+    {
+        //Le même code que celui dans le player.
+        Vector3 RelativePos = m_Player.transform.position - transform.position;
+
+        //Cette ligne fait que mon joueur regarde vers l'ennemi sur tous les axes.
+        Quaternion TargetRotation = Quaternion.LookRotation(RelativePos, Vector3.up);
+
+        //Ces 2 lignes font qu'il regarde l'ennemi seulement sur l'axe des y.
+        float TargetY = TargetRotation.eulerAngles.y;
+        TargetRotation = Quaternion.Euler(0, TargetY, 0);
+
+        //Ca fait une variable AngleDifference qui va dire les 2 angles sont proches comment
+        float CurrentY = transform.eulerAngles.y;
+        float AngleDifference = Mathf.Abs(Mathf.DeltaAngle(CurrentY, TargetY));
+
+        //C'est pour pas que le lerp continue a l'infini (si les 2 angles sont assez proches, le lerp s'arrete).
+        if (AngleDifference > 0.5f)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * m_FacePlayerSpeed);
+        }
+        else
+        {
+            transform.rotation = TargetRotation;
+        }
+    }
+
+    void FollowPlayer()
+    {
+        // Si il attaque, je veux pas qu'il coure
+        if (m_IsAttacking) return;
+
+        float DistanceToPlayer = Vector3.Distance(transform.position, m_Player.transform.position);
+
+        if (DistanceToPlayer <= m_SpotDistance)
+        {
+            //Le code pour si le player a été "spotté"
+            m_SpottedPlayer = true;
+            m_Agent.SetDestination(m_Player.transform.position);
+        }
+        else
+        {
+            //Le code pour si il n'a pas été "spotté"
+            m_SpottedPlayer = false;
+        }
+        print(m_Agent.velocity.magnitude);
+        m_Animator.SetFloat("Speed", m_Agent.velocity.magnitude * 4); //Le *4 sert a ce que la run animation puisse se faire trigger
+        //J'ai fait une constante magique car je n'avais aucune idée quoi lui donner comme nom et que ca fasse du sens
+    }
+}
