@@ -45,4 +45,9 @@ public class TimersHandler : MonoBehaviour
     {
         return m_IsActive;
     }
+
+    public float GetTimeElapsed()
+    {
+        return m_TimeElapsed;
+    }
 }

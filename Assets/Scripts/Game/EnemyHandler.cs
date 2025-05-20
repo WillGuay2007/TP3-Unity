@@ -16,9 +16,10 @@ public class EnemyHandler : MonoBehaviour
     private Animator m_Animator;
     private NavMeshAgent m_Agent;
     private TimersHandler m_AttackTimer;
-    private bool m_IsAttacking;
     private bool m_SpottedPlayer;
-    // Start is called before the first frame update
+    private float m_AgentOriginalSpeed;
+    private float m_VelocityToAnimationSpeedMultiplier = 4;
+
     void Start()
     {
         m_PlayerController = m_Player.GetComponent<PlayerController>();
@@ -28,22 +29,24 @@ public class EnemyHandler : MonoBehaviour
         m_AttackTimer.m_Duration = m_AttackDelay;
         m_Agent.updateRotation = false; // Je gère déja la rotation.
         m_Agent.stoppingDistance = m_AttackDistance;
+        m_AgentOriginalSpeed = m_Agent.speed;
     }
 
     void Update()
     {
         //Gérer la logique du spot et follow
-        FollowPlayer();
+        FollowPlayerIfNearby();
 
         if (!m_SpottedPlayer) return;
-        HandleAttackTimer();
+        HandleAttackTimers();
         FacePlayer();
         if (Vector3.Distance(transform.position, m_Player.transform.position) < m_AttackDistance)
         {
             if (m_CanAttack)
             {
                 m_CanAttack = false;
-                AttackPlayer();
+                //Un event dans l'animation va appeler AttackPlayer()
+                m_Animator.SetTrigger("Attack");
             }
         }
     }
@@ -51,16 +54,22 @@ public class EnemyHandler : MonoBehaviour
     void AttackPlayer()
     {
         m_PlayerController.TakeDamage(m_AttackDamage);
-        m_Animator.SetTrigger("Attack");
+
+        //NOTE: J'ai fait ca pour garder une balance entre le tir et le punch.
+        //D'autres balances sont ajoutés aussi, je les ai commentés.
+        //C'est a dire: Laisser une chance au joueur de partir soit pour s'enfuir ou bien prendre une bonne distance pour tirer.
+        //Le punch est une touche personnelle que je voulais ajouter.
+        m_Agent.speed = 0.5f;
     }
 
-    void HandleAttackTimer()
+    void HandleAttackTimers()
     {
         if (m_CanAttack) return;
         if (!m_AttackTimer.IsActive()) m_AttackTimer.StartTimer();
         if (m_AttackTimer.UpdateTimer())
         {
             m_CanAttack = true;
+            m_Agent.speed = m_AgentOriginalSpeed;
         }
     }
 
@@ -91,11 +100,8 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
-    void FollowPlayer()
+    void FollowPlayerIfNearby()
     {
-        // Si il attaque, je veux pas qu'il coure
-        if (m_IsAttacking) return;
-
         float DistanceToPlayer = Vector3.Distance(transform.position, m_Player.transform.position);
 
         if (DistanceToPlayer <= m_SpotDistance)
@@ -109,8 +115,6 @@ public class EnemyHandler : MonoBehaviour
             //Le code pour si il n'a pas été "spotté"
             m_SpottedPlayer = false;
         }
-        print(m_Agent.velocity.magnitude);
-        m_Animator.SetFloat("Speed", m_Agent.velocity.magnitude * 4); //Le *4 sert a ce que la run animation puisse se faire trigger
-        //J'ai fait une constante magique car je n'avais aucune idée quoi lui donner comme nom et que ca fasse du sens
+        m_Animator.SetFloat("Speed", m_Agent.velocity.magnitude * m_VelocityToAnimationSpeedMultiplier);
     }
 }
