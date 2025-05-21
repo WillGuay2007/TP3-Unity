@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileHandler : MonoBehaviour
 {
+    [SerializeField] private int m_ProjectileDamage;
     private float m_Speed;
     private GameObject m_CurrentEnemyTarget;
     private Vector3 m_Direction;
@@ -34,6 +35,9 @@ public class ProjectileHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            EnemyHandler EnemyHandlerScript = other.gameObject.GetComponent<EnemyHandler>();
+            EnemyHandlerScript.MoveToPlayer(); //Pour pas qu'il reste la a rien faire
+            EnemyHandlerScript.TakeDamage(m_ProjectileDamage);
             Destroy(gameObject);
         }
         //Sinon, la balle passe a travers.

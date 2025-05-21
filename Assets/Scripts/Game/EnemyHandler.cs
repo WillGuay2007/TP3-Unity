@@ -10,6 +10,8 @@ public class EnemyHandler : MonoBehaviour
     [SerializeField] private int m_AttackDamage;
     [SerializeField] private float m_AttackDelay;
     [SerializeField] private float m_SpotDistance;
+    [SerializeField] private int m_EnemyHealth;
+    [SerializeField] private GameHUD m_GameHUD;
     private bool m_CanAttack = true;
     private float m_FacePlayerSpeed = 5;
     private PlayerController m_PlayerController;
@@ -19,6 +21,8 @@ public class EnemyHandler : MonoBehaviour
     private bool m_SpottedPlayer;
     private float m_AgentOriginalSpeed;
     private float m_VelocityToAnimationSpeedMultiplier = 4;
+    private bool m_IsDead;
+    private float m_DeathDespawnTimer = 5;
 
     void Start()
     {
@@ -34,6 +38,7 @@ public class EnemyHandler : MonoBehaviour
 
     void Update()
     {
+        if (m_IsDead) return;
         //Gérer la logique du spot et follow
         FollowPlayerIfNearby();
 
@@ -73,6 +78,27 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
+    void OnDeath()
+    {
+        m_Agent.enabled = false;
+        GetComponent<Collider>().enabled = false;
+        m_Animator.SetTrigger("Die");
+        m_PlayerController.DeselectEnemy();
+        Destroy(gameObject, m_DeathDespawnTimer);
+    }
+
+    public void TakeDamage(int Damage)
+    {
+        if (m_IsDead) return;
+        m_EnemyHealth -= Damage;
+        if (m_EnemyHealth <= 0) {
+            m_EnemyHealth = 0;
+            m_IsDead = true;
+            OnDeath();
+        };
+        m_GameHUD.NotifyEnemyHealth(m_EnemyHealth);
+    }
+
     void FacePlayer()
     {
         //Le même code que celui dans le player.
@@ -100,6 +126,20 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
+    public void MoveToPlayer()
+    {
+        if (m_SpottedPlayer) return;
+        m_Agent.speed = m_AgentOriginalSpeed; //Si il étais ralenti, je veut qu'il cours vers le joueur plutot que de marcher quand on lui tire dessu.
+        m_Agent.SetDestination(m_Player.transform.position);
+    } 
+    //Cette fonction est pour appeler dans le script de projectile.
+    //Je veut que si une balle touche l'ennemi mais qu'il n'a pas spot le player, il va se deplacer vers sa position.
+
+    public int GetHealth()
+    {
+        return m_EnemyHealth;
+    }
+
     void FollowPlayerIfNearby()
     {
         float DistanceToPlayer = Vector3.Distance(transform.position, m_Player.transform.position);
@@ -115,6 +155,6 @@ public class EnemyHandler : MonoBehaviour
             //Le code pour si il n'a pas été "spotté"
             m_SpottedPlayer = false;
         }
-        m_Animator.SetFloat("Speed", m_Agent.velocity.magnitude * m_VelocityToAnimationSpeedMultiplier);
+        m_Animator.SetFloat("Speed", m_Agent.velocity.magnitude * m_VelocityToAnimationSpeedMultiplier); // Le multiplier c'est pour qu'il puisse run et pas juste walk
     }
 }

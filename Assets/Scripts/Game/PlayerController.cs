@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_RunSoundsDelay;
     [SerializeField] private GameHUD m_GameHUD;
     [SerializeField] private int m_PlayerHealth;
+    [SerializeField] private int m_PunchDamage;
     private Color m_HighlightColor = Color.white;
     private float m_OutlineWidth = 5f;
     private Outline m_CurrentOutline;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
         m_Agent = GetComponent<NavMeshAgent>();
         m_Animator = GetComponent<Animator>();
+        m_GameHUD.ChangeEnemyPanelState(false);
 
         m_ShootTimer = gameObject.AddComponent<TimersHandler>();
         m_ShootTimer.m_Duration = m_ShootDelay;
@@ -74,13 +76,17 @@ public class PlayerController : MonoBehaviour
                     m_CurrentEnemyTarget = info.collider.gameObject;
                     m_Agent.stoppingDistance = m_ShootDistance;
                     HighlightObject(info.collider.gameObject);
+                    m_GameHUD.ChangeEnemyPanelState(true);
+                    m_GameHUD.NotifyEnemyHealth(m_CurrentEnemyTarget.GetComponent<EnemyHandler>().GetHealth());
                 }
                 else if (info.collider.gameObject.tag == "Interactable") {
-                
+                    m_GameHUD.ChangeEnemyPanelState(false);
+                    m_CurrentEnemyTarget = null;
                 }
                 else
                 {
                     //Si il touche pas un ennemi, il n'aura pas/plus de cible a track et il va se deplacer au point exact.
+                    m_GameHUD.ChangeEnemyPanelState(false);
                     m_CurrentEnemyTarget = null;
                     m_Agent.stoppingDistance = 0;
                     RemoveHighlight();
@@ -157,6 +163,7 @@ public class PlayerController : MonoBehaviour
                 if (m_CanPunch) m_CanPunch = false; else return;
                 m_IsPunchingLeft = !m_IsPunchingLeft;
                 if (m_IsPunchingLeft) m_Animator.SetTrigger("punch_L"); else m_Animator.SetTrigger("punch_R");
+                m_CurrentEnemyTarget.GetComponent<EnemyHandler>().TakeDamage(m_PunchDamage);
                 m_PunchTimer.StartTimer();
                 m_AudioHandler.PlayPunchSound();
             } else
@@ -171,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        if (m_CurrentEnemyTarget == null) return; // Pour être 100% sur qu'il existe
+        if (m_CurrentEnemyTarget == null) return; // Pour être 100% sur qu'il existe et eviter les erreurs potentielles.
 
         //J'ai fai ceci car sinon il visait sur les pieds du monstre. Je veut qu'il vise sur ses hips.
         Transform CharacterReference = m_CurrentEnemyTarget.transform.Find("Character1_Reference");
@@ -231,6 +238,13 @@ public class PlayerController : MonoBehaviour
 
         //Garder l'outline en information pour le RemoveHighlight()
         m_CurrentOutline = outline;
+    }
+
+    public void DeselectEnemy()
+    {
+        m_CurrentEnemyTarget = null;
+        m_Agent.stoppingDistance = 0;
+        RemoveHighlight();
     }
 
     private void RemoveHighlight()
