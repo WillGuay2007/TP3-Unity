@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject m_Player;
     [SerializeField] private float m_AttackDistance;
     [SerializeField] private int m_AttackDamage;
     [SerializeField] private float m_AttackDelay;
     [SerializeField] private float m_SpotDistance;
     [SerializeField] private int m_EnemyHealth;
-    [SerializeField] private GameHUD m_GameHUD;
+    private GameHUD m_GameHUD;
+    private GameObject m_Player;
     private bool m_CanAttack = true;
     private float m_FacePlayerSpeed = 5;
     private PlayerController m_PlayerController;
@@ -26,6 +26,10 @@ public class EnemyHandler : MonoBehaviour
 
     void Start()
     {
+        //Je fais ca ici pour le prefab
+        m_Player = GameObject.FindWithTag("Player");
+        m_GameHUD = GameObject.FindObjectOfType<Canvas>().GetComponent<GameHUD>();
+
         m_PlayerController = m_Player.GetComponent<PlayerController>();
         m_Agent = GetComponent<NavMeshAgent>();
         m_Animator = GetComponent<Animator>();
@@ -84,6 +88,8 @@ public class EnemyHandler : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         m_Animator.SetTrigger("Die");
         m_PlayerController.DeselectEnemy();
+        m_GameHUD.ChangeEnemyPanelState(false);
+        m_PlayerController.DecrementEnemiesLeft();
         Destroy(gameObject, m_DeathDespawnTimer);
     }
 

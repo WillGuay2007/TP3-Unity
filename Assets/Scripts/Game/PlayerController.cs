@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
@@ -20,12 +21,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameHUD m_GameHUD;
     [SerializeField] private int m_PlayerHealth;
     [SerializeField] private int m_PunchDamage;
+    [SerializeField] private int m_NumberOfEnemiesLeft;
     private Color m_HighlightColor = Color.white;
     private float m_OutlineWidth = 5f;
     private Outline m_CurrentOutline;
     private int m_MaxPlayerHealth;
     private TimersHandler m_ShootTimer;
     private TimersHandler m_PunchTimer;
+    private TimersHandler m_DeathTimer;
+    private float m_DeathDelay = 3;
     private TimersHandler m_RunSoundsTimer;
     private bool m_IsRunning;
     private bool m_CanPunch = true;
@@ -35,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent m_Agent;
     private Animator m_Animator;
     private bool m_CanShoot = true;
+    private bool m_IsDead;
 
     void Start()
     {
@@ -44,17 +49,26 @@ public class PlayerController : MonoBehaviour
         m_Agent = GetComponent<NavMeshAgent>();
         m_Animator = GetComponent<Animator>();
         m_GameHUD.ChangeEnemyPanelState(false);
+        m_GameHUD.NotifyEnemiesLeft(m_NumberOfEnemiesLeft);
 
         m_ShootTimer = gameObject.AddComponent<TimersHandler>();
         m_ShootTimer.m_Duration = m_ShootDelay;
         m_PunchTimer = gameObject.AddComponent<TimersHandler>();
         m_PunchTimer.m_Duration = m_PunchDelay;
+        m_DeathTimer = gameObject.AddComponent<TimersHandler>();
+        m_DeathTimer.m_Duration = m_DeathDelay;
         m_RunSoundsTimer = gameObject.AddComponent<TimersHandler>();
         m_RunSoundsTimer.m_Duration = m_RunSoundsDelay;
     }
 
+
     void Update()
     {
+        if (m_IsDead) {
+            if (!m_DeathTimer.IsActive()) m_DeathTimer.StartTimer();
+            if (m_DeathTimer.UpdateTimer()) SceneManager.LoadScene("MainGame");
+            return;
+        };
         HandleMouseClick();
         HandleAnimations();
         HandleAttackTimers();
@@ -68,7 +82,6 @@ public class PlayerController : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit info))
             {
-
                 if (info.collider.gameObject.tag == "Enemy")
                 {
                     //Faire que l'ennemi est plus null si le ray en touche un.
@@ -125,9 +138,22 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int Dmg)
     {
+        if (m_IsDead) return;
         m_PlayerHealth -= Dmg;
-        if (m_PlayerHealth < 0) { m_PlayerHealth = 0; }
+        if (m_PlayerHealth <= 0) { m_PlayerHealth = 0; m_IsDead = true; OnDeath(); }
         m_GameHUD.NotifyPlayerHealth(m_PlayerHealth);
+    }
+
+    public void DecrementEnemiesLeft()
+    {
+        m_GameHUD.NotifyEnemiesLeft(--m_NumberOfEnemiesLeft);
+    }
+
+    private void OnDeath()
+    {
+        m_Animator.SetTrigger("Die");
+        m_Agent.isStopped = true;
+        m_GameHUD.FadeToBlack();
     }
 
     void HandleAttackTimers()

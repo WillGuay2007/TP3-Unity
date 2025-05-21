@@ -7,18 +7,19 @@ public class CameraFollow : MonoBehaviour
     Vector3 m_CameraPlayerOffset;
     [SerializeField] private float m_LerpPercentage;
     [SerializeField] private GameObject m_Player;
+    [SerializeField] private float m_FarDistance;
+    [SerializeField] private float m_HeightOffset;
     [SerializeField] private float m_StopDistance;
 
 
     void Start()
     {
-        m_CameraPlayerOffset = transform.position - m_Player.transform.position;
     }
 
     void LateUpdate()
     {
         //Le goal de la camera
-        Vector3 targetPosition = m_Player.transform.position + m_CameraPlayerOffset;
+        Vector3 targetPosition = m_Player.transform.position - (m_Player.transform.forward * m_FarDistance) + Vector3.up * m_HeightOffset;
 
         //La distance de la camera avec son goal
         float distance = Vector3.Distance(transform.position, targetPosition);
@@ -32,6 +33,11 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = targetPosition;
         }
+
+        Vector3 lookAtPosition = m_Player.transform.position + Vector3.up * 1f;
+        Quaternion targetRotation = Quaternion.LookRotation(lookAtPosition - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_LerpPercentage * Time.deltaTime);
+
     }
 }
 

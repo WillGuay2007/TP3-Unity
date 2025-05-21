@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\",
+  "WorkspaceRootPath": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|c:\\users\\willb\\desktop\\unity\\tp3-unity\\assets\\scripts\\game\\enemyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\enemyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\projectilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\projectilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|c:\\users\\2430063\\desktop\\unity\\tp3-unity\\assets\\scripts\\game\\enemyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\enemyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\timershandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\game\\projectilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\projectilehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\timershandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\timershandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\audiohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\assets\\scripts\\audiohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EC60553-8591-6E33-8CEF-75F738FA0AAD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,30 +38,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EnemyHandler.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\EnemyHandler.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\EnemyHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\EnemyHandler.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\EnemyHandler.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\EnemyHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game\\EnemyHandler.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAwwJ0AAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T16:41:57.895Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameHUD.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\GameHUD.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\GameHUD.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\GameHUD.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\GameHUD.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\GameHUD.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game\\GameHUD.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA9wBcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwDQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T17:17:12.775Z",
               "EditorCaption": ""
@@ -70,9 +74,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "AudioHandler.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\AudioHandler.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\AudioHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioHandler.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\AudioHandler.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\AudioHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\AudioHandler.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowA4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -82,50 +86,51 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "TimersHandler.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\TimersHandler.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\TimersHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimersHandler.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\TimersHandler.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\TimersHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\TimersHandler.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowCwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T04:24:19.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProjectileHandler.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\ProjectileHandler.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\ProjectileHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\ProjectileHandler.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\ProjectileHandler.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\ProjectileHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game\\ProjectileHandler.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T03:53:28.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game\\PlayerController.cs",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAIwJUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T03:53:21.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CameraFollow.cs",
-              "DocumentMoniker": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\CameraFollow.cs",
+              "DocumentMoniker": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\CameraFollow.cs",
-              "ToolTip": "C:\\Users\\willb\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\CameraFollow.cs",
+              "ToolTip": "C:\\Users\\2430063\\Desktop\\Unity\\TP3-Unity\\Assets\\Scripts\\Game\\CameraFollow.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game\\CameraFollow.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T03:53:15.765Z"
+              "WhenOpened": "2025-05-19T03:53:15.765Z",
+              "EditorCaption": ""
             }
           ]
         }
